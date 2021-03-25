@@ -166,7 +166,7 @@ EXPORTS
             </source>
             <beforeLink>
                 <parallel threadsPerProcessor="2" failonany="true" unless:set="lib-dependencies-uptodate">
-                    <update-dependency module="core" artifact="core/libffi.lib"/>
+                    <download-libffi module="core" artifact="core/libffi.lib"/>
                 </parallel>
             </beforeLink>
             <link>
