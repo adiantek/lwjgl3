@@ -314,12 +314,6 @@
             <arg value="HEAD~1..HEAD" unless:true="${commit_CI}"/>
         </exec>
 
-        <local name="commit_mismatch"/>
-        <condition property="commit_mismatch" value="true">
-            <not><equals arg1="${Implementation-Version}" arg2="${commit}"/></not>
-        </condition>
-        <delete file="templates.jar" taskname="Deleting the compiled Kotlin templates cache" if:set="commit_mismatch"/>
-        <fail message="The current commit does not match the Kotlin template cache's commit." if="commit_mismatch"/>
 
         <!-- Hydrate -->
         <antcall target="clean-kotlin"/>
